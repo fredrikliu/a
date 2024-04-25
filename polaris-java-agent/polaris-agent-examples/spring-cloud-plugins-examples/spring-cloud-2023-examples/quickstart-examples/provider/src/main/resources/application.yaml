@@ -1,0 +1,32 @@
+server:
+  port: 65104
+
+spring:
+  application:
+    name: service-provider-2023
+  cloud:
+    nacos:
+      username: 'nacos'
+      password: 'UKt([$gc'
+      discovery:
+        enabled: false
+        server-addr: 111.230.1.219:8848
+      config:
+        enabled: true
+        serverAddr: 111.230.1.219:8848
+        username: 'nacos'
+        password: 'UKt([$gc'
+  config:
+    import:
+      - nacos:service-provider-2023.properties?refreshEnabled=true
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+logging:
+  level:
+    root: debug

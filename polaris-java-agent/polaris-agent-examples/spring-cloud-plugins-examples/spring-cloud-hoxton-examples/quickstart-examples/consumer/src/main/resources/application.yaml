@@ -1,0 +1,32 @@
+server:
+  port: 65109
+
+spring:
+  application:
+    name: service-consumer-H
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        server-addr: 81.71.12.60:8848
+        username: 'nacos'
+        password: 'UKt([$gc'
+      config:
+        enabled: true
+        serverAddr: 81.71.12.60:8848
+        username: 'nacos'
+        password: 'UKt([$gc'
+  config:
+    import:
+      - nacos:service-consumer-H.properties?refreshEnabled=true
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+logging:
+  level:
+    root: debug
